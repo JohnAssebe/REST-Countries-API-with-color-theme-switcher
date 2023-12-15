@@ -32,7 +32,7 @@ const Filters = ({ onFilterChange }) => {
         <option value="europe" className="hover:bg-red-300">
           Europe
         </option>
-        <option value="europe" className="hover:bg-red-300">
+        <option value="oceania" className="hover:bg-red-300">
           Oceania
         </option>
       </select>
