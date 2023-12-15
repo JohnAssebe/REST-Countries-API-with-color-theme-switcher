@@ -2,11 +2,11 @@
 import { IoSearchOutline } from "react-icons/io5";
 const Filters = ({ onFilterChange }) => {
   return (
-    <div className="w-full px-12 flex items-center justify-between my-6 font-nunito">
+    <div className="flex flex-col items-center justify-between w-full gap-4 px-2 my-6 sm:px-12 sm:flex-row font-nunito">
       <div className="relative flex items-center justify-center">
-        <IoSearchOutline className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
+        <IoSearchOutline className="absolute -translate-y-1/2 left-4 top-1/2 text-slate-400" />
         <input
-          className="w-full h-full outline-none shadow-lg border rounded-md py-2 px-9"
+          className="w-full h-full py-2 border rounded-md shadow-lg outline-none px-9"
           placeholder="Search for a country..."
           onChange={(e) => onFilterChange("search", e.target.value)}
         />
@@ -14,7 +14,7 @@ const Filters = ({ onFilterChange }) => {
       <select
         name="continents"
         id="continents"
-        className="text-sm shadow-lg px-7 py-2 outline-none placeholder:text-black border rounded-md cursor-pointer"
+        className="py-2 text-sm border rounded-md shadow-lg outline-none cursor-pointer px-7 placeholder:text-black"
         onChange={(e) => onFilterChange("select", e.target.value)}
       >
         <option value="" disabled selected hidden>
