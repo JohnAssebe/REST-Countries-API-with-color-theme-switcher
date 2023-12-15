@@ -1,5 +1,6 @@
 /*eslint-disable*/
 import LoadingSVG from "../assets/loading.svg";
+import { Link } from "react-router-dom";
 const Countries = ({ countries, loading }) => {
   return (
     <div className="w-full">
@@ -12,10 +13,10 @@ const Countries = ({ countries, loading }) => {
       ) : (
         <div className="grid items-center max-w-6xl grid-cols-1 gap-6 px-6 mx-auto xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 font-nunito">
           {countries?.map((country, _) => (
-            <div
+            <Link
+              to={`/countryDetail/${country?.name?.official}`}
               key={_}
               className="flex flex-col w-full gap-3 pb-4 mx-auto shadow-xl cursor-pointer rounded-b-xl"
-              onClick={() => console.log(country)}
             >
               <div className="w-full border rounded-md h-36">
                 <img
@@ -43,7 +44,7 @@ const Countries = ({ countries, loading }) => {
                   <span>{country?.capital}</span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       )}
