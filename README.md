@@ -1,8 +1,15 @@
-# React + Vite
+<h4>Welcome !</h4>
+<p>project preview: </p>
+<h5>Landing page</h5>
+<img src="./src/assets/design/desktop-design-home-light.jpg"/>
+<h5>Detail Page</h5>
+<img src="./src/assets/design/desktop-design-detail-light.jpg"/>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h5>Dark Mode</h5>
+<img src="./src/assets/design/desktop-design-home-dark.jpg"/>
 
-Currently, two official plugins are available:
+<p>
+If you find this repository useful, please consider giving it a star ⭐️!
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<h4>Thank you for your support! 🙌</h4>
