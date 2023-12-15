@@ -10,11 +10,12 @@ const Countries = ({ countries, loading }) => {
           </div>
         </div>
       ) : (
-        <div className="grid items-center max-w-6xl grid-cols-1 gap-6 px-6 mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 font-nunito">
+        <div className="grid items-center max-w-6xl grid-cols-1 gap-6 px-6 mx-auto xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 font-nunito">
           {countries?.map((country, _) => (
             <div
               key={_}
-              className="flex flex-col gap-3 pb-4 mx-auto shadow-xl cursor-pointer w-3/2 sm:w-full rounded-b-xl"
+              className="flex flex-col w-full gap-3 pb-4 mx-auto shadow-xl cursor-pointer rounded-b-xl"
+              onClick={() => console.log(country)}
             >
               <div className="w-full border rounded-md h-36">
                 <img
@@ -23,7 +24,11 @@ const Countries = ({ countries, loading }) => {
                   className="w-full h-full rounded-t-md"
                 />
               </div>
-              <h4 className="px-3 font-bold">{country?.name?.common}</h4>
+              <h4 className="px-3 font-bold">
+                {country?.name?.common?.length > 27
+                  ? country?.name?.common?.slice(0, 25) + "..."
+                  : country?.name?.common}
+              </h4>
               <div className="flex flex-col gap-1 px-3 text-sm">
                 <div className="flex items-center justify-start gap-x-2">
                   <p>Population:</p>
