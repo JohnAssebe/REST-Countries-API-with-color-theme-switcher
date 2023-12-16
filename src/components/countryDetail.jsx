@@ -109,7 +109,7 @@ const CountryDetail = () => {
 
             <div className="flex flex-col flex-wrap items-start justify-start gap-2 py-1 md:flex-row mt-9">
               <p className="font-semibold">Border Countries:</p>
-              <div className="flex flex-wrap items-center justify-start gap-x-1">
+              <div className="flex flex-wrap items-center justify-start gap-2">
                 {loadNeighbors ? (
                   <img src={SmallSizeLoadingSVG} alt="loading" />
                 ) : neighbors?.length > 0 ? (
