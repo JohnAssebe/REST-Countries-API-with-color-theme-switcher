@@ -20,10 +20,10 @@ const CountryDetail = () => {
     setCountryCode(country?.borders);
   }, [country]);
   return (
-    <div className="w-full px-4 font-nunito">
-      <div className="my-8">
+    <div className="w-full min-h-screen px-4 duration-500 font-nunito dark:bg-veryDarkBlueAlt dark:text-veryLightGray">
+      <div className="py-8">
         <button
-          className="flex items-center justify-center px-6 py-2 text-sm duration-500 rounded-md shadow-lg gap-x-3 hover:-translate-x-1 hover:text-veryDarkBlueAlt shadow-slate-300"
+          className="flex items-center justify-center px-6 py-2 text-sm duration-500 rounded-md shadow-lg dark:shadow-none dark:hover:text-white dark:bg-darkBlue gap-x-3 hover:-translate-x-1 hover:text-veryDarkBlueAlt shadow-slate-300"
           onClick={() => goBack()}
         >
           <IoArrowBack />
