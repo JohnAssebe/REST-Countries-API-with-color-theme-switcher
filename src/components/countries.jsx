@@ -3,7 +3,7 @@ import LoadingSVG from "../assets/loading.svg";
 import { Link } from "react-router-dom";
 const Countries = ({ countries, loading }) => {
   return (
-    <div className="w-full">
+    <div className="w-full min-h-screen duration-500 dark:bg-veryDarkBlueAlt dark:text-veryLightGray">
       {loading ? (
         <div className="fixed inset-0 z-10 flex items-center justify-center bg-black/20 bg-opacity-30">
           <div className="rounded-lg">
@@ -16,7 +16,7 @@ const Countries = ({ countries, loading }) => {
             <Link
               to={`/countryDetail/${country?.name?.official}`}
               key={_}
-              className="flex flex-col w-full gap-3 pb-4 mx-auto shadow-xl cursor-pointer rounded-b-xl"
+              className="flex flex-col w-full gap-3 pb-4 mx-auto duration-500 shadow-xl cursor-pointer rounded-b-xl dark:bg-darkBlue"
             >
               <div className="w-full border rounded-md h-36">
                 <img
