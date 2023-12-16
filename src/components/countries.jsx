@@ -1,5 +1,6 @@
 /*eslint-disable*/
 import LoadingSVG from "../assets/loading.svg";
+import LoadingSVGDark from "../assets/loading-dark.svg";
 import { Link } from "react-router-dom";
 const Countries = ({ countries, loading }) => {
   return (
@@ -7,7 +8,14 @@ const Countries = ({ countries, loading }) => {
       {loading ? (
         <div className="fixed inset-0 z-10 flex items-center justify-center bg-black/20 bg-opacity-30">
           <div className="rounded-lg">
-            <img src={LoadingSVG} alt="loading" />
+            <img
+              src={
+                localStorage.getItem("theme") === "light"
+                  ? LoadingSVG
+                  : LoadingSVGDark
+              }
+              alt="loading"
+            />
           </div>
         </div>
       ) : (
