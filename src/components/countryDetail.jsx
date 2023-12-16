@@ -72,7 +72,7 @@ const CountryDetail = () => {
                 <p className="font-semibold">Population:</p>
                 <span>{country?.population}</span>
               </div>
-              <div className="flex items-center justify-center w-full md:w-56 md:justify-start gap-x-2">
+              <div className="flex items-center justify-center w-full md:w-56 md:items-start md:justify-start gap-x-1">
                 <p className="font-semibold">Currencies:</p>
                 <span className="flex flex-wrap items-start justify-center gap-1">
                   {Object.keys(country?.currencies)?.map(
