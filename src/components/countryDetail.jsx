@@ -37,34 +37,34 @@ const CountryDetail = () => {
           </div>
         </div>
       ) : (
-        <div className="flex items-start justify-center gap-6">
-          <div className="basis-1/2">
+        <div className="flex flex-col items-center justify-center gap-6 md:flex-row md:items-start">
+          <div className="sm:basis-1/2">
             <img
               src={country?.flags?.png}
-              className="object-cover mx-auto border sm:w-96 sm:h-64"
+              className="object-cover mx-auto border md:w-96 md:h-64"
             />
           </div>
-          <div className="flex flex-col items-start justify-start basis-1/2">
+          <div className="flex flex-col items-center justify-center md:items-start md:justify-start md:basis-1/2">
             <h4 className="mb-4 text-2xl font-extrabold">
               {country?.name?.common}
             </h4>
-            <div className="flex items-start justify-between w-11/12 py-1 pr-6">
-              <div className="flex items-center justify-center gap-x-2">
+            <div className="flex flex-col items-center justify-between w-11/12 gap-2 py-1 pr-6 md:items-start md:flex-row">
+              <div className="flex items-center justify-center gap-x-1">
                 <p className="font-semibold">Native Name:</p>
                 <span>{country?.demonyms?.eng?.m}</span>
               </div>
-              <div className="flex items-center justify-start w-56 gap-x-2">
+              <div className="flex items-center justify-center w-56 md:justify-start gap-x-2">
                 <p className="font-semibold">Top Level Domain:</p>
                 <span>{country?.tld}</span>
               </div>
             </div>
 
-            <div className="flex items-start justify-between w-11/12 py-1 pr-6">
+            <div className="flex flex-col items-center justify-between w-11/12 gap-2 py-1 pr-6 md:items-start md:flex-row">
               <div className="flex items-center justify-center gap-x-2">
                 <p className="font-semibold">Population:</p>
                 <span>{country?.population}</span>
               </div>
-              <div className="flex items-start justify-start w-56 gap-x-2">
+              <div className="flex items-center justify-center w-full md:w-56 md:justify-start gap-x-2">
                 <p className="font-semibold">Currencies:</p>
                 <span className="flex flex-wrap items-start justify-center gap-1">
                   {Object.keys(country?.currencies)?.map(
@@ -79,14 +79,14 @@ const CountryDetail = () => {
               </div>
             </div>
 
-            <div className="flex items-start justify-between w-11/12 py-1 pr-6">
+            <div className="flex flex-col items-center justify-between w-11/12 gap-2 py-1 pr-6 md:items-start md:flex-row">
               <div className="flex items-center justify-center gap-x-2">
                 <p className="font-semibold">Region:</p>
                 <span>{country?.region}</span>
               </div>
-              <div className="flex items-start justify-start w-56 gap-x-2">
+              <div className="flex items-start justify-center w-full md:w-56 md:justify-start gap-x-2">
                 <p className="font-semibold">Languages:</p>
-                <span className="flex flex-wrap gap-1">
+                <span className="flex flex-col flex-wrap gap-1 md:flex-row">
                   {Object.keys(country?.languages)?.map((key, index, array) => (
                     <span key={key}>
                       {country?.languages[key]}
@@ -107,23 +107,24 @@ const CountryDetail = () => {
               <span>{country?.capital}</span>
             </div>
 
-            <div className="flex flex-wrap items-center justify-start gap-2 py-1 mt-9">
+            <div className="flex flex-col flex-wrap items-start justify-start gap-2 py-1 md:flex-row mt-9">
               <p className="font-semibold">Border Countries:</p>
-
-              {loadNeighbors ? (
-                <img src={SmallSizeLoadingSVG} alt="loading" />
-              ) : neighbors?.length > 0 ? (
-                neighbors?.map((country) => (
-                  <span
-                    className="px-4 py-1 text-xs border rounded-md"
-                    key={country.flag}
-                  >
-                    {country?.name.common}
-                  </span>
-                ))
-              ) : (
-                <span>No border country</span>
-              )}
+              <div className="flex flex-wrap items-center justify-start gap-x-1">
+                {loadNeighbors ? (
+                  <img src={SmallSizeLoadingSVG} alt="loading" />
+                ) : neighbors?.length > 0 ? (
+                  neighbors?.map((country) => (
+                    <span
+                      className="px-4 py-1 text-xs border rounded-md"
+                      key={country.flag}
+                    >
+                      {country?.name.common}
+                    </span>
+                  ))
+                ) : (
+                  <span>No border country</span>
+                )}
+              </div>
             </div>
           </div>
         </div>
