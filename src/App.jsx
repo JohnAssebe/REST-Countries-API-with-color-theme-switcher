@@ -12,6 +12,7 @@ import Layout from "./components/layout";
 import FilteredCountries from "./components/filteredCountries";
 import CountryDetail from "./components/countryDetail";
 const client = new QueryClient();
+
 const ScrollTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -19,6 +20,7 @@ const ScrollTop = () => {
   }, [pathname]);
   return null;
 };
+
 function App() {
   return (
     <QueryClientProvider client={client}>
